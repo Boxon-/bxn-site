@@ -1,8 +1,8 @@
-<?php include('templates/header.php')?>
+<?php include('Templates/header.php')?>
 <body>
 	<div id="main">
 	</div>
 <script>
 </script>
 </body>
-<?php include('templates/footer.php')?>
+<?php include('Templates/footer.php')?>
