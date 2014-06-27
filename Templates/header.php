@@ -1,6 +1,6 @@
 <html lang="fr">
 <head>
-<title>TEST</title>
+<title>ToDoList</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="shortcut icon" href="" />
 <link rel="icon" type="image/x-icon" href="" />
