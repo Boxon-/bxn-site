@@ -23,11 +23,14 @@ class Site {
 		$this->serverSoftware = $_SERVER['SERVER_SOFTWARE'];
 		$this->serverRoot = $_SERVER['DOCUMENT_ROOT'];
 
-		//la valeur Root renvoi l'adresse du site sur le serveur
+		//la valeur Root renvoi l'adresse du site sur le serveur et URL l'adesse pour le navigateur
 		if($this->serverName=='localhost'){
-			$this->ROOT = $this->serverRoot."/ToDoList/";
-		}else{
 			$this->ROOT = $this->serverRoot."ToDoList/";
+			$this->URL = "http://".$this->serverName."/ToDoList/";
+			
+		}else{
+			$this->ROOT = $this->serverRoot."/";
+			$this->URL = "http://".$this->serverName."/";
 		}
 		
 		//on reccupere la valeur chapitre pass�e potentiellement par GET
