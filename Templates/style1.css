@@ -1,3 +1,40 @@
-body{
-	
+body
+{
+
 }
+
+ @font-face
+{
+	font-family: "skeletor77";
+	src : url('font/Version_0.1_77_skeletor.ttf');
+}
+
+p
+{
+	margin-top: 0px;
+	font-family: "skeletor77";
+	font-size: 2em;
+	color:black;
+}
+
+#banniere
+{
+	font-family: "skeletor77";
+	font-size: 2em;
+
+}
+
+a
+{
+
+	
+	text-decoration: none;
+}
+
+a:hover 
+{
+	color:red;
+}
+
+
+

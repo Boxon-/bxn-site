@@ -1,6 +1,12 @@
-﻿Création de site web
+ToDoList
+========
+
+﻿Création du site todolist.fr
 codename : todolist.free.fr
 
-Participation : Xavier Klein, Étienne Ozeray, Alexandre Cormier, Antoine Gelgon, Ivan Murit.
+Regroupement de designers aux penchants libristes.
+http://etienneozeray.fr/pads/pads.html
 
-LICENCE : GNU/GPL V3
+Participants : Xavier Klein, Étienne Ozeray, Alexandre Cormier, Antoine Gelgon, Ivan Murit.
+
+LICENCE : GNU/GPL V3 (http://www.gnu.org/copyleft/gpl.html)

@@ -11,7 +11,5 @@
 <link rel="apple-touch-icon" href="" />
 <meta name="viewport" content="width=1400 initial-scale=1.0" />
 <link rel="stylesheet" type="text/css" href="Templates/style1.css" />
-<script>
-	alert ('salut les gars!');
- </script>
+<script>//Code de prechargement</script>
 </head>
