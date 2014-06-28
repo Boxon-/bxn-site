@@ -1,0 +1,81 @@
+<?php
+include('Chapitre.class.php');
+include('Client.class.php');
+class Site {
+
+	//variables 
+	private $name;
+	private $serverName;
+	private $serverSoftware;
+	private $serverRoot;
+	private $ROOT;
+	private $chapitreActuel;
+	private $client;
+	
+	//function déclanchée à la création d'un objet Site;
+    function __construct($name){
+		//nom du site
+		$this->name=$name;
+    }
+	public function init(){
+		// recuperation des infos sur le serveur
+		$this->serverName = $_SERVER['SERVER_NAME'];
+		$this->serverSoftware = $_SERVER['SERVER_SOFTWARE'];
+		$this->serverRoot = $_SERVER['DOCUMENT_ROOT'];
+
+		//la valeur Root renvoi l'adresse du site sur le serveur
+		if($this->serverName=='localhost'){
+			$this->ROOT = $this->serverRoot."/ToDoList/";
+		}else{
+			$this->ROOT = $this->serverRoot."ToDoList/";
+		}
+		
+		//on reccupere la valeur chapitre passée potentiellement par GET
+		$this->setChapitreFromGET();
+		
+		//on creer un objet client
+		$this->client=$this->add(new Client());	
+	}
+	//ajouter un objet au site affiché (ex:Chapitre ect...)
+	public function add($object){
+		if (property_exists($object,"site")) {
+		  $object->site=$this;
+		}
+		return $object;
+	}
+	
+	//GETTER
+	public function __get($property) {
+		if (property_exists($this, $property)) {
+			return $this->$property;
+		}
+	}
+	
+	//SETTER
+	public function __set($property, $value) {
+		if (property_exists($this, $property)) {
+			switch($property){
+				case "name":
+					$this->$property = $value;
+				break;				
+			}
+		}
+	}
+	
+
+	private function setChapitreFromGET(){
+		// exemple index.php?chapitre="blog" 
+		// on creer un nouvel objet chapitre dont le nom est "blog"
+		if(isset($_GET['chapitre'])){
+			if($_GET['chapitre']!=""){
+				$nomChapitre= htmlspecialchars($_GET['chapitre'], ENT_QUOTES); //on filtre le GET
+				$this->chapitreActuel = $this->add(new Chapitre($nomChapitre)); 
+			}
+		}else{
+			// le chapitre actuel par default est "accueil"
+			$this->chapitreActuel = $this->add(new Chapitre("accueil")); 		
+		}	
+		echo ($this->chapitreActuel->name);
+	}
+}
+?>
