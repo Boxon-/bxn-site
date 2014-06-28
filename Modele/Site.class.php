@@ -73,12 +73,14 @@ class Site {
 			if($_GET['chapitre']!=""){
 				$nomChapitre= htmlspecialchars($_GET['chapitre'], ENT_QUOTES); //on filtre le GET
 				$this->chapitreActuel = $this->add(new Chapitre($nomChapitre)); 
-			}
+			}else{
+				// le chapitre actuel par default est "accueil"
+				$this->chapitreActuel = $this->add(new Chapitre("accueil")); 		
+			}	
 		}else{
 			// le chapitre actuel par default est "accueil"
 			$this->chapitreActuel = $this->add(new Chapitre("accueil")); 		
 		}	
-		echo ($this->chapitreActuel->name);
 	}
 	
 	//renvoi l'url du chapitre souhaité (marche potentielement en local et en ligne)
