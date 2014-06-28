@@ -1,22 +1,27 @@
 body
 {
-	
+
 }
 
  @font-face
-{   
+{
 	font-family: "skeletor77";
 	src : url('font/Version_0.1_77_skeletor.ttf');
 }
 
 p
 {
-	margin-top: 0px;	
+	margin-top: 0px;
 }
 
 #banniere
 {
-	font-family: skeletor77;
+	font-family: "skeletor77";
 	font-size: 4em;
 	margin-top: 0;
+}
+
+a{
+	font-family: "skeletor77";
+	font-size: 2em;
 }
