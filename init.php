@@ -1,6 +1,6 @@
 <?php
 	//classe mère
-	include_once("Site.class.php");	
+	include_once("Modele/Site.class.php");	
 	
 	//construction du site
 	$S=new Site('ToDoList');
