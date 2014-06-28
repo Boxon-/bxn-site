@@ -1,1 +1,1 @@
-bienvenue dans l'accueil
+Mesdames et messieurs, l'accueil !
