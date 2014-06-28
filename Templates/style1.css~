@@ -21,7 +21,7 @@ p
 {
 	font-family: "skeletor77";
 	font-size: 2em;
-
+	margin-top: 0px;
 }
 
 a
