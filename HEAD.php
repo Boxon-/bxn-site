@@ -12,7 +12,7 @@
 	<meta name="viewport" content="width=1400 initial-scale=1.0" />
 	<link rel="stylesheet" type="text/css" href="Templates/style1.css" />
 	<script>
-	//CODE de prechargement 
+		//Code de prechargement
 	</script>
 </head>
 <body>
