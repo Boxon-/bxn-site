@@ -12,7 +12,7 @@ class Site {
 	private $chapitreActuel;
 	private $client;
 	
-	//function déclanchée à la création d'un objet Site;
+	//function dï¿½clanchï¿½e ï¿½ la crï¿½ation d'un objet Site;
     function __construct($name){
 		//nom du site
 		$this->name=$name;
@@ -30,13 +30,13 @@ class Site {
 			$this->ROOT = $this->serverRoot."ToDoList/";
 		}
 		
-		//on reccupere la valeur chapitre passée potentiellement par GET
+		//on reccupere la valeur chapitre passï¿½e potentiellement par GET
 		$this->setChapitreFromGET();
 		
 		//on creer un objet client
 		$this->client=$this->add(new Client());	
 	}
-	//ajouter un objet au site affiché (ex:Chapitre ect...)
+	//ajouter un objet au site affichï¿½ (ex:Chapitre ect...)
 	public function add($object){
 		if (property_exists($object,"site")) {
 		  $object->site=$this;
@@ -62,7 +62,7 @@ class Site {
 		}
 	}
 	
-
+	//defini le chapitre actuel par l'URL
 	private function setChapitreFromGET(){
 		// exemple index.php?chapitre="blog" 
 		// on creer un nouvel objet chapitre dont le nom est "blog"
@@ -76,6 +76,12 @@ class Site {
 			$this->chapitreActuel = $this->add(new Chapitre("accueil")); 		
 		}	
 		echo ($this->chapitreActuel->name);
+	}
+	
+	//renvoi l'url du chapitre souhaitÃ© (marche potentielement en local et en ligne)
+	public function generateURLFor($chapitre){
+		$url = $this->URL."index.php?chapitre=".$chapitre;
+		return $url;
 	}
 }
 ?>
