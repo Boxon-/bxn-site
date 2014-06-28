@@ -1,6 +1,9 @@
 <?php
 include('Chapitre.class.php');
 include('Client.class.php');
+include('File.class.php');
+include('HTMLhandler.class.php');
+include('simple_html_dom.php');
 class Site {
 
 	//variables 
