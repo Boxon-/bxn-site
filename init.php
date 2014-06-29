@@ -40,6 +40,9 @@
 	$S->addPath("U","Templates",$url.'/Templates/');
 	$S->addPath("U","Chapitres",$root.'/Chapitres/');
 	
+	//Importation de la classe qui sert de base à toute les autres
+	require($S->paths["S"]['Modele'].'Component.class.php');
+	
 	//Importation des autres classes
 	require($S->paths["S"]['Modele'].'Chapitre.class.php');
 	require($S->paths["S"]['Modele'].'Client.class.php');
