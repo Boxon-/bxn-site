@@ -8,7 +8,7 @@ include_once('HEAD.php');?>
 		<div id="menuH"><!--Templates/menuH.html--><?php include_once('Templates/menuH.html')?></div>
 		</br>
 		<div id="chapitre">
-			<?php $chapitre->includeChapitre(); ?>
+			<?php $S->chapitreActuel->includeChapitre(); ?>
 		</div>
 	</div>
 	<div id="footer"><!--marge inferieure--><?php include_once("Templates/footer.php");?></div>
