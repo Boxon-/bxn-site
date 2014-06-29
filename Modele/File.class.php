@@ -1,36 +1,17 @@
 <?php
-class File {
+class File extends Component {
 
 	//variables 
 	private $url;
-	private $site;
 	private $html;
 	private $file_handle;
 	
     public function __construct($url){
+		parent::__construct("file");
 		if ($this->isAllowed($url)) {
 			$this->url=$url;
 		}
     }
-	
-	//GETTER
-	public function __get($property) {
-		if (property_exists($this, $property)) {
-			return $this->$property;
-		}
-	}
-	
-	//SETTER
-	public function __set($property, $value) {
-		if (property_exists($this, $property)) {
-			switch($property){
-				case "name":
-					$this->$property = $value;
-				break;				
-			}
-		}
-	}
-	
 	
 	public function load(){
 		if (file_exists($this->url)) {
