@@ -33,12 +33,12 @@
 	//chemins serveur :
 	$S->addPath("S","Modele",$root.'/Modele/'); 
 	$S->addPath("S","Templates",$root.'/Templates/');
+	$S->addPath("S","Chapitres",$root.'/Chapitres/');
+	
 	//urls :
 	$S->addPath("U","Modele",$url.'/Modele/');
 	$S->addPath("U","Templates",$url.'/Templates/');
-	
-	//Importation de la classe qui sert de base à toute les autres
-	require($S->paths["S"]['Modele'].'Component.class.php');
+	$S->addPath("U","Chapitres",$root.'/Chapitres/');
 	
 	//Importation des autres classes
 	require($S->paths["S"]['Modele'].'Chapitre.class.php');
