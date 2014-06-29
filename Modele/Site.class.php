@@ -10,14 +10,16 @@ class Site {
 	private $chapitreActuel;
 	private $client;
 	private static $_instance = null;
+	private $generator = 0;
 	private $paths = array();
+	private $map = array();
 	
 	//function d�clanch�e � la cr�ation d'un objet Site;
-	function __construct(){
+    function __construct(){
 		$this->paths['S']= array();
 		$this->paths['B']= array();
-	
-	}
+
+    }
 	
 	//construction du Singleton (classe qui ne peut avoir qu'une seule instance)
 	public static function getInstance() {
@@ -29,13 +31,34 @@ class Site {
 	
 	//initialisation des données
 	public function init(){
-
-		
 		//on reccupere la valeur chapitre pass�e potentiellement par GET
 		$this->setChapitreFromGET();
 		
 		//on creer un objet client
 		$this->client=new Client();	
+	}
+	
+	//on incrémente le generator a chaque demande d'ID
+	public function generateID(){
+		$this->generator++;
+		return $this->generator;
+	}
+	
+	//ajout d'un composant au tableau map selon son type 
+	public function add($component){
+		$case = array($component,$component->ID);
+		$mapIndex = 0;
+		if(!array_key_exists($component->type,$this->map)){
+			//si aucun composant de ce type n'est dans le tableau on creer une nouvelle colonne
+			$this->map[$component->type]=array();
+			array_push($this->map[$component->type],$case);
+			$mapIndex = count($this->map[$component->type]);
+		}else{
+			array_push($this->map[$component->type],$case);
+			$mapIndex = count($this->map[$component->type]);
+		}
+		//on renvoi son index dans le tableau de son type
+		return $mapIndex-1;
 	}
 
 	//GETTER
