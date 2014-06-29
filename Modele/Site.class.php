@@ -1,9 +1,4 @@
 <?php
-include('Chapitre.class.php');
-include('Client.class.php');
-include('File.class.php');
-include('HTMLhandler.class.php');
-include('simple_html_dom.php');
 class Site {
 
 	//variables 
@@ -14,42 +9,35 @@ class Site {
 	private $ROOT;
 	private $chapitreActuel;
 	private $client;
+	private static $_instance = null;
+	private $paths = array();
 	
 	//function d�clanch�e � la cr�ation d'un objet Site;
-    function __construct($name){
-		//nom du site
-		$this->name=$name;
-    }
-	public function init(){
-		// recuperation des infos sur le serveur
-		$this->serverName = $_SERVER['SERVER_NAME'];
-		$this->serverSoftware = $_SERVER['SERVER_SOFTWARE'];
-		$this->serverRoot = $_SERVER['DOCUMENT_ROOT'];
-
-		//la valeur Root renvoi l'adresse du site sur le serveur et URL l'adesse pour le navigateur
-		if($this->serverName=='localhost'){
-			$this->ROOT = $this->serverRoot."ToDoList/";
-			$this->URL = "http://".$this->serverName."/ToDoList/";
-			
-		}else{
-			$this->ROOT = $this->serverRoot."/";
-			$this->URL = "http://".$this->serverName."/";
+	function __construct(){
+		$this->paths['S']= array();
+		$this->paths['B']= array();
+	
+	}
+	
+	//construction du Singleton (classe qui ne peut avoir qu'une seule instance)
+	public static function getInstance() {
+		if(is_null(self::$_instance)) {
+			self::$_instance = new Site();
 		}
+		return self::$_instance;
+	}
+	
+	//initialisation des données
+	public function init(){
+
 		
 		//on reccupere la valeur chapitre pass�e potentiellement par GET
 		$this->setChapitreFromGET();
 		
 		//on creer un objet client
-		$this->client=$this->add(new Client());	
+		$this->client=new Client();	
 	}
-	//ajouter un objet au site affich� (ex:Chapitre ect...)
-	public function add($object){
-		if (property_exists($object,"site")) {
-		  $object->site=$this;
-		}
-		return $object;
-	}
-	
+
 	//GETTER
 	public function __get($property) {
 		if (property_exists($this, $property)) {
@@ -63,9 +51,17 @@ class Site {
 			switch($property){
 				case "name":
 					$this->$property = $value;
-				break;				
+				break;		
+				case "paths":
+					$this->$property = $value;
+				break;					
 			}
 		}
+	}
+	
+	//ajout de chemins
+	public function addPath($type,$index,$value){
+		$this->paths[$type][$index]=$value;		
 	}
 	
 	//defini le chapitre actuel par l'URL
@@ -75,14 +71,14 @@ class Site {
 		if(isset($_GET['chapitre'])){
 			if($_GET['chapitre']!=""){
 				$nomChapitre= htmlspecialchars($_GET['chapitre'], ENT_QUOTES); //on filtre le GET
-				$this->chapitreActuel = $this->add(new Chapitre($nomChapitre)); 
+				$this->chapitreActuel = new Chapitre($nomChapitre); 
 			}else{
 				// le chapitre actuel par default est "accueil"
-				$this->chapitreActuel = $this->add(new Chapitre("accueil")); 		
+				$this->chapitreActuel = new Chapitre("accueil"); 		
 			}	
 		}else{
 			// le chapitre actuel par default est "accueil"
-			$this->chapitreActuel = $this->add(new Chapitre("accueil")); 		
+			$this->chapitreActuel = new Chapitre("accueil"); 		
 		}	
 	}
 	
