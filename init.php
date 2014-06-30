@@ -41,7 +41,9 @@
 	require($S->paths["S"]['Modele'].'Component.class.php');
 	
 	//Importation du Log
+	require($S->paths["S"]['Modele'].'Alert.class.php');
 	require($S->paths["S"]['Modele'].'Log.class.php');
+
 	
 	//Importation des autres classes
 	require($S->paths["S"]['Modele'].'Chapitre.class.php');
@@ -55,5 +57,6 @@
 	$S->init();
 	
 	$F=new File("blabla.txt");
+	$F->create();
 
 ?>
