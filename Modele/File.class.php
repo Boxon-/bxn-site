@@ -12,9 +12,9 @@ class File extends Component {
 	private $blocked;
 	
 	//consctructeur
-    public function __construct($url){
+    public function __construct($url,$updateLog=true){
 		parent::__construct("file");
-		if ($this->S->isAllowed($this,$url)) {
+		if ($this->S->isAllowed($this,$url,$updateLog)) {
 			if (!file_exists($this->url)) {
 				$this->url=$url;
 				$this->content="file content";
@@ -26,7 +26,9 @@ class File extends Component {
 			}
 			$this->name = $this->extractName($this->url);
 			$this->format = $this->extractFormat($this->url);
-			$this->Log("New File : ".$this->url);
+			if($updateLog){
+				$this->Log("New File : ".$this->url);
+			}
 			return true;
 		}else{
 			$this->url="";
@@ -48,24 +50,24 @@ class File extends Component {
 
 	//SETTERS
 	//url
-	public function setURL($url){
-		if($this->isAllowed($url)){
+	public function setURL($url,$updateLog=true){
+		if($this->isAllowed($url,$updateLog)){
 			$this->url=$url;
 			return true;
 		}
 		return false;
 	}
 	//html
-	public function setHTML($htmlDoc){
-		if($this->S->isAllowed($this,$htmlDoc)){
+	public function setHTML($htmlDoc,$updateLog=true){
+		if($this->S->isAllowed($this,$htmlDoc,$updateLog)){
 			$this->html=$htmlDoc;
 			return true;
 		}
 		return false;
 	}
 	//content
-	public function setContent($content){
-		if($this->S->isAllowed($this,$content)){
+	public function setContent($content,$updateLog=true){
+		if($this->S->isAllowed($this,$content,$updateLog)){
 			$this->content=$content;
 			return true;
 		}
@@ -86,7 +88,7 @@ class File extends Component {
 		return $nameSplit[$lastSplit];
 	}
 	//chargement du fichier (WIP)
-	public function load(){
+	public function load($updateLog=true){
 		if (file_exists($this->url)) {
 		
 		}else{
@@ -95,12 +97,12 @@ class File extends Component {
 	}
 	
 	//creation du fichier sur le serveur
-	public function create(){
+	public function create($updateLog=true){
 		if($this->blocked==false){
 			if (!file_exists($this->url)) {
 				if($this->url!=""){
 					$this->file_handle = fopen($this->url, 'w') or die("can't open file");
-					if($this->S->isAllowed($this,$this->content)){
+					if($this->S->isAllowed($this,$this->content,$updateLog)){
 						fwrite($this->file_handle ,$this->content);
 						$this->size=strlen($this->content);
 						$this->Log($this->url." <--File created successfuly !!");
@@ -109,15 +111,15 @@ class File extends Component {
 					fclose($this->file_handle );
 				}			
 			}else{
-				$this->Log($this->url."<--Cannot create File , file allready exist !!");
+				if($updateLog){$this->Log($this->url."<--Cannot create File , file allready exist !!");}
 			}
 		}
 		return false;
 	}	
 	
 	//lecture du fichier , retourne une string
-	public function read(){
-		$this->Log("Start reading File : ".$this->url);
+	public function read($updateLog=true){
+		if($updateLog){$this->Log("Start reading File : ".$this->url);}
 		if($this->blocked==false){
 			if (file_exists($this->url)) {
 				$output="";
@@ -128,23 +130,23 @@ class File extends Component {
 				}
 				fclose($this->file_handle);
 				$this->updateContent($output);
-				$this->Log("File red successfuly !");
+				if($updateLog){$this->Log("File red successfuly !");}
 				return $output;
 			}else{
-				$this->Log("! File do not exist !");
+				if($updateLog){$this->Log("! File do not exist !");}
 			}
 		}
-		$this->Log("! Cannot read file ! : ".$this->url." file blocked !");
+		if($updateLog){$this->Log("! Cannot read file ! : ".$this->url." file blocked !");}
 		return false;
 	}
 	
 	// ecriture du fichier (avec securite)
-	public function write($string,$position){
+	public function write($string,$position,$updateLog){
 		if($this->blocked==false){
 			if (file_exists($this->url)) {
-				if($this->S->isAllowed($string)){
+				if($this->S->isAllowed($this,$string,$updateLog)){
 					$toWrite ="";
-					$existing=$this->read();
+					$existing=$this->read($updateLog);
 					switch($position){
 						case 'over':
 							//ecraser
@@ -159,13 +161,11 @@ class File extends Component {
 							$toWrite=$string.$existing;
 						break;
 					}
-					if ($this->S->isAllowed($this,$this->url)) {
-						$this->file_handle = fopen($this->url, 'w') or die("can't open file");
-						fwrite($this->file_handle , $toWrite);
-						fclose($this->file_handle );
-						$this->updateContent($toWrite);
-						return true;
-					}
+					$this->file_handle = fopen($this->url, 'w') or die("can't open file");
+					fwrite($this->file_handle , $toWrite);
+					fclose($this->file_handle );
+					$this->updateContent($toWrite);
+					return true;
 				}
 			}
 		}
@@ -178,10 +178,10 @@ class File extends Component {
 		}
 	}
 	//renommer le fichier (WIP)
-	public function rename($newName){
+	public function rename($newName,$updateLog=true){
 		if($this->blocked==false){
 			if (file_exists($this->url)) {
-				if ($this->isAllowed($newName)) {
+				if ($this->isAllowed($newName,$updateLog)) {
 
 				}
 			}
@@ -189,10 +189,10 @@ class File extends Component {
 		return false;
 	}	
 	//suppression du fichier (avec securite)
-	public function delete(){
+	public function delete($updateLog=true){
 		if($this->blocked==false){
 			if (file_exists($this->url)) {
-				if ($this->S->isAllowed($this,$this->url)) {
+				if ($this->S->isAllowed($this,$this->url,$updateLog)) {
 					unlink($this->url);
 					return true;
 				}
@@ -202,7 +202,7 @@ class File extends Component {
 	}	
 	
 	//analyse un document html 
-	public function buildHTML(){
+	public function buildHTML($updateLog=true){
 		if($this->blocked==false){
 			$this->html = new HTMLhandler($this->url);
 			return true;
