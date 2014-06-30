@@ -25,11 +25,11 @@ class Dir extends Component {
 			if (!file_exists($this->url)) {
 				if ($this->S->isAllowed($this,$this->url,$updateLog)) {
 					mkdir($this->url, 0777, true)or die("can't create dir");
-					$this->Log($this->url." : Dir created successfuly !!");
+					$this->Log($this->url." : Dir created successfuly !!",'success');
 					return true;
 				}
 			}else{
-				$this->Log($this->url." : Cannot create dir , dir allready exist !!");
+				$this->Log($this->url." : Cannot create dir , dir allready exist !!",'error');
 			}
 		}
 		return false;
@@ -63,12 +63,12 @@ class Dir extends Component {
 						}
 					}
 				}
-				$this->Log("Dir red successfuly !!");
+				$this->Log("Dir red successfuly !!",'success');
 				closedir($this->dir_handle);
 				return $output;
 			}
 		}
-		$this->Log("! Dir do not exist !");
+		$this->Log("! Dir do not exist !",'error');
 		return false;
 	}
 	//renommer le dossier (WIP)
@@ -94,7 +94,7 @@ class Dir extends Component {
 					}
 				}
 			}else{
-				$this->Log($this->url." : Cannot delete dir , dir do not exist !!");
+				$this->Log($this->url." : Cannot delete dir , dir do not exist !!",'error');
 			}
 		}
 		return false;
