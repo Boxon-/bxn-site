@@ -20,10 +20,10 @@ class Dir extends Component {
 	}
 
 	//creation du dossier
-	public function create(){
+	public function create($updateLog=true){
 		if($this->blocked==false){
 			if (!file_exists($this->url)) {
-				if ($this->S->isAllowed($this,$this->url)) {
+				if ($this->S->isAllowed($this,$this->url,$updateLog)) {
 					mkdir($this->url, 0777, true)or die("can't create dir");
 					$this->Log($this->url." : Dir created successfuly !!");
 					return true;
@@ -36,7 +36,7 @@ class Dir extends Component {
 	}	
 	
 	//Lecture du dossier
-	public function read($outputType){
+	public function read($outputType,$updateLog=true){
 	$this->Log("Start reading Dir : ".$this->url);
 		if (file_exists($this->url)) {
 			if ($this->dir_handle = opendir($this->url)or die("can't open dir")) {	
@@ -72,10 +72,10 @@ class Dir extends Component {
 		return false;
 	}
 	//renommer le dossier (WIP)
-	public function rename($newName){
+	public function rename($newName,$updateLog=true){
 		if($this->blocked==false){
 			if (file_exists($this->url)) {
-				if ($this->S->isAllowed($this,$newName)) {
+				if ($this->S->isAllowed($this,$newName,$updateLog)) {
 					return true;
 				}
 			}
@@ -83,11 +83,11 @@ class Dir extends Component {
 		return false;
 	}	
 	//supprimmer le dossier	
-	public function delete(){
+	public function delete($updateLog=true){
 	$this->Log("deleting :".$this->url);
 		if($this->blocked==false){
 			if (file_exists($this->url)) {
-				if ($this->S->isAllowed($this,$this->url)) {
+				if ($this->S->isAllowed($this,$this->url,$updateLog)) {
 					if (!is_dir($this->url)) {
 						rmdir($this->url);
 						return true;
