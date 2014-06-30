@@ -41,7 +41,7 @@ class Component {
 		$output = "_[".$this->type."]-->".$alert;
 		//on ajoute l'alerte au log du site
 		$this->S->addToLog($output);
-		echo $alert;
+		//echo $alert;
 	}
 
 }
