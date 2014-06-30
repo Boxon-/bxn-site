@@ -12,6 +12,11 @@
 	<meta name="viewport" content="width=1400 initial-scale=1.0" />
 	<link rel="stylesheet" type="text/css" href="Templates/style1.css" />
 	<script>
+		console.log('------------!phpLog!----------');
+			<?php echo $S->Log->getJsConsole(); ?>
+		console.log('------------------------------');
+	</script>
+	<script>
 		//Code de prechargement
 	</script>
 </head>
