@@ -4,6 +4,7 @@ class Component {
 	private $type;
 	private $ID;
 	private $mapIndex;
+	private $blocked;
 	
 	//construction 
     function __construct($type){
@@ -27,19 +28,13 @@ class Component {
 	//SETTER
 	public function __set($property, $value) {
 		if (property_exists($this, $property)) {
-			switch($property){
-				case "name":
-					$this->$property = $value;
-				break;
-				case "pathFromIndex":
-					$this->$property = $value;
-				break;
-				case "pathFromServer":
-					$this->$property = $value;
-				break;				
-			}
 			$this->$property = $value;
 		}
+	}
+	//log;
+	public function log($string){
+		$output = "_[".$this->type."]-->".$string;
+		$this->S->toLog($output);
 	}
 
 }
