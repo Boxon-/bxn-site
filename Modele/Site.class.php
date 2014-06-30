@@ -13,13 +13,14 @@ class Site {
 	private $generator = 0;
 	private $paths = array();
 	private $map = array();
+	private $phpLog ="";
 	
 	//function d�clanch�e � la cr�ation d'un objet Site;
-    function __construct(){
+	function __construct(){
 		$this->paths['S']= array();
 		$this->paths['B']= array();
-
-    }
+	
+	}
 	
 	//construction du Singleton (classe qui ne peut avoir qu'une seule instance)
 	public static function getInstance() {
@@ -57,7 +58,7 @@ class Site {
 			array_push($this->map[$component->type],$case);
 			$mapIndex = count($this->map[$component->type]);
 		}
-		//on renvoi son index dans le tableau de son type
+		//on renvoi son index dans le tableau
 		return $mapIndex-1;
 	}
 
@@ -109,6 +110,31 @@ class Site {
 	public function generateURLFor($chapitre){
 		$url = $this->URL."index.php?chapitre=".$chapitre;
 		return $url;
+	}
+	public function toLog($string){
+		if(gettype ( $string)=='string'){
+			$this->phpLog.="console.log('".$string."');";
+		}
+	}
+	//on verifi si cela ne risque pas de perturber le fonctionnement du site
+	public function isAllowed($component,$string){
+		$component->blocked=false;
+		$forbiddenNames=array('index','Templates','Modele','init','<?','<?php','?>','git','bash','.bat','.dll','.exe','rm*','.htaccess');;
+		$check=0;
+		for ($i=0;$i<count($forbiddenNames);$i++){
+			if (strpos($string,$forbiddenNames[$i])==true) {		
+				$check++;
+			}
+		}
+		if($check==0){
+			$component->blocked=false;
+			$component->Log($string.' >>> Ok!');
+			return true;
+		}else{
+			$component->blocked=true;
+			$component->Log($string.' >>> Not ok!');
+			return false;
+		}
 	}
 }
 ?>
