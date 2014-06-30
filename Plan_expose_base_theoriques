@@ -1,0 +1,46 @@
+Exposé sur le fonctionnement du site:
+
+prologue facultatif sur la synthaxe PHP:
+-declarer une variable
+-echo
+-les fonctions
+-declarer une classe
+-les variables de classe
+-les conventions d'ecriture
+
+I Bases theoriques:
+    
+	1) La Fonction publique
+		-variables globales 
+		-la fonction  publiques/ privées
+		-les arguments
+
+	2) La Lutte des Classes 
+		-le concept de Classe et d'Objet 
+		-l'Encapsulation c'est la vie
+		-la fonction construct
+		-les getters et setters
+
+III Fonctionnement du site : 
+    
+	1) Le Serveur et ses Clients
+		
+	2) L'Arboraissance
+		-dossier Templates
+		-dossier Modele
+
+	3) La Classe Seigneur "Site"
+		-son role 
+		-le singleton n'as aucun amis
+		-le Log
+
+	4) La Classe Component
+		-ses fonctions 
+		-la bonne façon de creer de nouvelle classe
+	5) La Classe Log	
+		-les alertes
+	6) Les Classes File et Dir 
+		-manipulation de fihcier
+		-securité
+
+
