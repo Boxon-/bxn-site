@@ -13,14 +13,15 @@ class Site {
 	private $generator = 0;
 	private $paths = array();
 	private $map = array();
-	private $phpLog ="";
+	private $Log;
 	
 	//function d�clanch�e � la cr�ation d'un objet Site;
-	function __construct(){
+    function __construct(){
 		$this->paths['S']= array();
 		$this->paths['B']= array();
-	
-	}
+		$this->Log = new Log();
+
+    }
 	
 	//construction du Singleton (classe qui ne peut avoir qu'une seule instance)
 	public static function getInstance() {
@@ -111,10 +112,11 @@ class Site {
 		$url = $this->URL."index.php?chapitre=".$chapitre;
 		return $url;
 	}
-	public function toLog($string){
-		if(gettype ( $string)=='string'){
-			$this->phpLog.="console.log('".$string."');";
-		}
+	//ajoute une alerte au log 
+	public function addToLog($alert){
+		$this->Log->addAlert($alert);
+		$this->Log->updateFile();
+		$this->Log->updateJsConsole();
 	}
 	//on verifi si cela ne risque pas de perturber le fonctionnement du site
 	public function isAllowed($component,$string){
