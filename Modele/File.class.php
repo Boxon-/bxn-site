@@ -105,13 +105,13 @@ class File extends Component {
 					if($this->S->isAllowed($this,$this->content,$updateLog)){
 						fwrite($this->file_handle ,$this->content);
 						$this->size=strlen($this->content);
-						$this->Log($this->url." <--File created successfuly !!");
+						$this->Log($this->url." <--File created successfuly !!",'success');
 						return true;
 					}
 					fclose($this->file_handle );
 				}			
 			}else{
-				if($updateLog){$this->Log($this->url."<--Cannot create File , file allready exist !!");}
+				if($updateLog){$this->Log($this->url."<--Cannot create File , file allready exist !!",'error');}
 			}
 		}
 		return false;
@@ -130,13 +130,13 @@ class File extends Component {
 				}
 				fclose($this->file_handle);
 				$this->updateContent($output);
-				if($updateLog){$this->Log("File red successfuly !");}
+				if($updateLog){$this->Log("File red successfuly !",'success');}
 				return $output;
 			}else{
-				if($updateLog){$this->Log("! File do not exist !");}
+				if($updateLog){$this->Log("! File do not exist !",'error');}
 			}
 		}
-		if($updateLog){$this->Log("! Cannot read file ! : ".$this->url." file blocked !");}
+		if($updateLog){$this->Log("! Cannot read file ! : ".$this->url." file blocked !",'error');}
 		return false;
 	}
 	
