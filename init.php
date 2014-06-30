@@ -10,17 +10,15 @@
 	$root;
 	$url;
 	if($serverName=='localhost'){
-		//si le site est lance en local 
-		$root = dirname(__FILE__).'/';
+		$root = dirname(__FILE__);
 		$url = "http://".$serverName.'/'.$fileURL;
 		
 	}else{
-		//depuis le serveur
 		$root = dirname(__FILE__);
 		$url = "http://".$serverName.$fileURL;
 	}
 	
-	//Importation de la classe Mere "Site"
+	//Importation de la classe Mere
 	require($root.'/Modele/Site.class.php');
 	
 	//construction de l'objet singleton $S issue de la classe Site
@@ -34,22 +32,28 @@
 	$S->addPath("S","Modele",$root.'/Modele/'); 
 	$S->addPath("S","Templates",$root.'/Templates/');
 	$S->addPath("S","Chapitres",$root.'/Chapitres/');
-	
 	//urls :
 	$S->addPath("U","Modele",$url.'/Modele/');
 	$S->addPath("U","Templates",$url.'/Templates/');
-	$S->addPath("U","Chapitres",$root.'/Chapitres/');
+	$S->addPath("U","Chapitres",$url.'/Chapitres/');
 	
 	//Importation de la classe qui sert de base à toute les autres
 	require($S->paths["S"]['Modele'].'Component.class.php');
+	
+	//Importation du Log
+	require($S->paths["S"]['Modele'].'Log.class.php');
 	
 	//Importation des autres classes
 	require($S->paths["S"]['Modele'].'Chapitre.class.php');
 	require($S->paths["S"]['Modele'].'Client.class.php');
 	require($S->paths["S"]['Modele'].'File.class.php');
+	require($S->paths["S"]['Modele'].'Dir.class.php');
 	require($S->paths["S"]['Modele'].'HTMLhandler.class.php');
 	require($S->paths["S"]['Modele'].'simple_html_dom.php');	
 	
-	//initialisation de l'objet Site
+	//initialisation de l'objet Site (et activation du log)
 	$S->init();
+	
+	$F=new File("blabla.txt");
+
 ?>
