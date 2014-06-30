@@ -14,12 +14,13 @@ class Site {
 	private $paths = array();
 	private $map = array();
 	private $Log;
+	private $logActivated;
 	
 	//function d�clanch�e � la cr�ation d'un objet Site;
     function __construct(){
 		$this->paths['S']= array();
-		$this->paths['B']= array();
-		$this->Log = new Log();
+		$this->paths['U']= array();
+		$this->logActivated=false;
 
     }
 	
@@ -33,11 +34,16 @@ class Site {
 	
 	//initialisation des données
 	public function init(){
+		//on active le log;
+		$this->activateLog();
+		
 		//on reccupere la valeur chapitre pass�e potentiellement par GET
 		$this->setChapitreFromGET();
 		
 		//on creer un objet client
 		$this->client=new Client();	
+		
+
 	}
 	
 	//on incrémente le generator a chaque demande d'ID
@@ -112,14 +118,30 @@ class Site {
 		$url = $this->URL."index.php?chapitre=".$chapitre;
 		return $url;
 	}
+	//on creer le log 
+	public function activateLog(){
+		$logDir = new Dir('logs');
+		$logDir->create();
+		$this->addPath("S","Log",$this->ROOT.$logDir->getURL());
+		$this->addPath("U","Log",$this->URL.$logDir->getURL());
+		$this->Log = new Log();
+		$this->logActivated=true;
+	}
+	//desactive le log , bloque l'ecriture 
+	public function desactivateLog(){
+		$this->logActivated=false;
+	}
 	//ajoute une alerte au log 
 	public function addToLog($alert){
-		$this->Log->addAlert($alert);
-		$this->Log->updateFile();
-		$this->Log->updateJsConsole();
+		if($this->logActivated){
+			$this->Log->addAlert($alert);
+			$this->Log->updateFile();
+			$this->Log->updateJsConsole();
+		}
+		return false;
 	}
 	//on verifi si cela ne risque pas de perturber le fonctionnement du site
-	public function isAllowed($component,$string){
+	public function isAllowed($component,$string,$updateLog){
 		$component->blocked=false;
 		$forbiddenNames=array('index','Templates','Modele','init','<?','<?php','?>','git','bash','.bat','.dll','.exe','rm*','.htaccess');;
 		$check=0;
@@ -130,11 +152,17 @@ class Site {
 		}
 		if($check==0){
 			$component->blocked=false;
-			$component->Log($string.' >>> Ok!');
+			if($updateLog){
+				$component->Log($string.' >>> Ok!');
+			}
 			return true;
 		}else{
 			$component->blocked=true;
-			$component->Log($string.' >>> Not ok!');
+			if($updateLog){
+				$component->Log($string.' >>> Not ok!');
+			}else{
+				return true;
+			}
 			return false;
 		}
 	}
