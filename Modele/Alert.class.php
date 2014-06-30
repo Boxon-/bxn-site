@@ -40,7 +40,7 @@ class Alert extends Component{
 				$this->style="color:green;";
 			break;
 		}
-		$output ='<span class="alertTimestamp">'.$this->timestamp.'</span><span id="'.$this->id.'" class="'.$this->classCSS.'" style="'.$this->style.'" >'.$this->content.'</span>';
+		$output ='<span class="alertTimestamp"><i>'.$this->timestamp.'</i></span><span id="'.$this->id.'" class="'.$this->classCSS.'" style="'.$this->style.'" >'.$this->content.'</span>';
 		return $output;
 		
 	}
