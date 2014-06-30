@@ -153,13 +153,13 @@ class Site {
 		if($check==0){
 			$component->blocked=false;
 			if($updateLog){
-				$component->Log($string.' >>> Ok!');
+				$component->Log($string.' >>> Ok!','success');
 			}
 			return true;
 		}else{
 			$component->blocked=true;
 			if($updateLog){
-				$component->Log($string.' >>> Not ok!');
+				$component->Log($string.' >>> Not ok!','error');
 			}else{
 				return true;
 			}
