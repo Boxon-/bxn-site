@@ -5,6 +5,7 @@ class Component {
 	private $ID;
 	private $mapIndex;
 	private $blocked;
+	private $relatedToLog;
 	
 	//construction 
     function __construct($type){
@@ -16,6 +17,9 @@ class Component {
 		$this->ID = $this->S->generateID();
 		//on ajoute le composant au Site
 		$this->mapIndex = $this->S->add($this);
+		//par default le composant ne recoit pas de traitement special 
+		$this->relatedToLog = false;
+		
     }
 	
 	//GETTER
@@ -37,6 +41,7 @@ class Component {
 		$output = "_[".$this->type."]-->".$alert;
 		//on ajoute l'alerte au log du site
 		$this->S->addToLog($output);
+		echo $alert;
 	}
 
 }
