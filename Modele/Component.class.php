@@ -31,10 +31,12 @@ class Component {
 			$this->$property = $value;
 		}
 	}
-	//log;
-	public function log($string){
-		$output = "_[".$this->type."]-->".$string;
-		$this->S->toLog($output);
+	//log, ajoute le type du Component au debut de l'alert;
+	public function Log($alert){
+		//on ajoute le type du Component au debut de l'alert. ex : file->Log("erreur")  affiche dans le log : "_[file]-->erreur"
+		$output = "_[".$this->type."]-->".$alert;
+		//on ajoute l'alerte au log du site
+		$this->S->addToLog($output);
 	}
 
 }
