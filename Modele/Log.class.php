@@ -21,20 +21,16 @@ class Log extends Component {
     }
 	// ajoute une alerte a listOfAlert
 	public function addAlert($alert){
-		//$alert doit etre de type string
-		if(gettype($alert)=='string'){
-			//on ajoute l alerte a la liste
-			array_push($this->listOfAlert,$alert);
-			$this->Log.=$alert;
-			$this->JsConsole.="console.log('".$alert."');";
-		}
+		//on ajoute l alerte a la liste
+		array_push($this->listOfAlert,$alert);
 	}
 	// actualise log.txt 
 	public function updateFile(){
 		if(gettype($this->listOfAlert)=='array'){
 			$toWrite="<html><body>";
 			foreach($this->listOfAlert as $alert){
-				$toWrite.="<span>".$alert."</span></br>";
+				$contentHTML=$alert->display();
+				$toWrite.=$contentHTML."</br>";
 			}
 			$toWrite.="</html></body>";
 			if($this->file->write($toWrite,'over',false)){
@@ -49,7 +45,7 @@ class Log extends Component {
 		$toJsConsole="";
 		if(gettype($this->listOfAlert)=='array'){
 			foreach($this->listOfAlert as $alert){
-				$toJsConsole.="console.log('".$alert."');";
+				$toJsConsole.="console.log('".$alert->getContent()."');";
 			}
 		}
 		$this->JsConsole = $toJsConsole;
