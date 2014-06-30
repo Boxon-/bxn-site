@@ -36,12 +36,16 @@ class Component {
 		}
 	}
 	//log, ajoute le type du Component au debut de l'alert;
-	public function Log($alert){
-		//on ajoute le type du Component au debut de l'alert. ex : file->Log("erreur")  affiche dans le log : "_[file]-->erreur"
-		$output = "_[".$this->type."]-->".$alert;
-		//on ajoute l'alerte au log du site
-		$this->S->addToLog($output);
-		//echo $alert;
+	public function Log($content,$alertType='event'){
+		// la fonction log ne peut s'appliquer aux alertes (cela creerait une boucle infinie qui engloutirait l'humanitee!)
+		if($this->type!='alert'){
+			//on ajoute le type du Component au debut de l'alert. ex : file->Log("erreur")  affiche dans le log : "_[file]-->erreur"
+			//ca le rend plus cool aussi 
+			$coolContent = "_[<b>".$this->type."</b>]-->".$content;
+			$oAlert = new Alert($coolContent,$alertType,$this->ID,$this->type."_alert");
+			//on ajoute l'alerte au log du site
+			$this->S->addToLog($oAlert);
+		}
 	}
 
 }
