@@ -13,8 +13,7 @@ class Client extends Component{
 		}
     }
 	public function getBrowser(){
-		echo $_SERVER['HTTP_USER_AGENT'] . "\n\n";
-		$browser = get_browser(null, true);
+		$browser =$_SERVER['HTTP_USER_AGENT'];
 		return ($browser);
 	}
 }
