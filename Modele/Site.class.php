@@ -42,8 +42,6 @@ class Site {
 		
 		//on creer un objet client
 		$this->client=new Client();	
-		
-
 	}
 	
 	//on incrémente le generator a chaque demande d'ID
@@ -94,6 +92,15 @@ class Site {
 	public function addPath($type,$index,$value){
 		$this->paths[$type][$index]=$value;		
 	}
+	//fonction permettant de lire d'attribuer la valeur d'une variable GET a une autre variable
+	private function setFromGET($GETvariable,&$variableToSet){
+		if(isset($_GET[$variable])){
+			if($_GET[$variable]!=""){
+				$filtre= htmlspecialchars($_GET[$variable], ENT_QUOTES); //on filtre le GET
+				$variableToSet = $filtre; 
+			}
+		}
+	}
 	
 	//defini le chapitre actuel par l'URL
 	private function setChapitreFromGET(){
@@ -113,9 +120,21 @@ class Site {
 		}	
 	}
 	
+	
+	
+
+	public function generateURL($variable,$value){
+		$url = $this->URL."index.php?".$variable."=".$value;
+		return $url;
+	}
 	//renvoi l'url du chapitre souhaité (marche potentielement en local et en ligne)
 	public function generateURLFor($chapitre){
-		$url = $this->URL."index.php?chapitre=".$chapitre;
+		$url=$this->generateURL("chapitre",$chapitre);
+		return $url;
+	}
+	
+	public function generateSandBoxURLFor($chapitre){
+		$url = $this->URL."index.php?sandbox=".$chapitre;
 		return $url;
 	}
 	//on creer le log 
