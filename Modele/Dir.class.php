@@ -53,7 +53,7 @@ class Dir extends Component {
 					if ($entry != "." && $entry != ".."&& $entry != ".htaccess"&& $entry != ".git") {
 						switch($outputType){
 							case 'string':
-								$output+="$entry\n";
+								$output.="$entry\n";
 							break;
 							case 'array':
 								if($nFile = new File($this->url."/$entry")){;
