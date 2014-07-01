@@ -1,4 +1,7 @@
 <?php
+	//desactivation des erreurs php
+	//error_reporting(0);	
+
 	// recuperation des infos sur le serveur
 	$serverName = $_SERVER['SERVER_NAME'];
 	$serverSoftware = $_SERVER['SERVER_SOFTWARE'];
@@ -18,6 +21,7 @@
 		$url = "http://".$serverName.$fileURL;
 	}
 	
+
 	//Importation de la classe Mere
 	require($root.'/Modele/Site.class.php');
 	
@@ -44,7 +48,12 @@
 	require($S->paths["S"]['Modele'].'Alert.class.php');
 	require($S->paths["S"]['Modele'].'Log.class.php');
 
-	
+	//function declanchee lors d'une erreur php
+	function phpErrorToLog($error){
+		$alertPHP = new Alert($error,'error');
+		$S->addToLog($alertPHP);
+	}
+
 	//Importation des autres classes
 	require($S->paths["S"]['Modele'].'Chapitre.class.php');
 	require($S->paths["S"]['Modele'].'Client.class.php');
@@ -55,8 +64,4 @@
 	
 	//initialisation de l'objet Site (et activation du log)
 	$S->init();
-	
-	$F=new File("blabla.txt");
-	$F->create();
-
 ?>
