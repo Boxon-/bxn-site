@@ -101,7 +101,7 @@ class File extends Component {
 		if($this->blocked==false){
 			if (!file_exists($this->url)) {
 				if($this->url!=""){
-					$this->file_handle = fopen($this->url, 'w') or die("can't open file");
+					$this->file_handle = fopen($this->url, "w") or die("can't open file");
 					if($this->S->isAllowed($this,$this->content,$updateLog)){
 						fwrite($this->file_handle ,$this->content);
 						$this->size=strlen($this->content);
