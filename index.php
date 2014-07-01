@@ -8,7 +8,7 @@ include_once('HEAD.php');?>
 		<div id="menuH"><!--Templates/menuH.html--><?php include_once('Templates/menuH.html')?></div>
 		</br>
 		<div id="chapitre">
-			<?php $S->chapitreActuel->includeChapitre(); ?>
+			<?php require($S->chapitreActuel->getPathFromServer())?>
 		</div>
 	</div>
 	<div id="footer"><!--marge inferieure--><?php include_once("Templates/footer.php");?></div>
