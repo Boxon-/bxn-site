@@ -1,0 +1,37 @@
+/*
+Theme Name: boxon
+Theme URI: 
+Description: b<>x<>n blog theme
+Version: 1.0
+Authors:  Alexandre Cormier, Antoine Gelgon, Xavier Klein, Ivan Murit, Étienne Ozeray
+Author URI: http://boxon.tools
+Tags: graphic design, code, free culture
+Licence : GNU General Public License V.3 (http://www.gnu.org/copyleft/gpl.html)
+
+*/
+
+@charset "utf-8";
+/**/
+
+.wrap{
+	marging: 2%;
+}
+
+.side{
+	float: left;
+	width: 17%;
+}
+
+.contenu{
+	float: right;
+	width:77%;
+}
+
+footer{
+	position: fixed;
+	bottom: 10px;
+}
+
+footer img.cc{
+	width:50px;	
+}
