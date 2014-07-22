@@ -1,11 +1,10 @@
- _____     ____        _     _     _   
-|_   _|__ |  _ \  ___ | |   (_)___| |_ 
-  | |/ _ \| | | |/ _ \| |   | / __| __|
-  | | (_) | |_| | (_) | |___| \__ \ |_ 
-  |_|\___/|____/ \___/|_____|_|___/\__|
+ ____   ______  ______  _   _ 
+| __ ) / /\ \ \/ / /\ \| \ | |
+|  _ \/ /  \ \  / /  \ \  \| |
+| |_) \ \  / /  \ \  / / |\  |
+|____/ \_\/_/_/\_\_\/_/|_| \_|
 
-﻿Création du site todolist.fr
-codename : todolist.free.fr
+﻿Création du site boxon.tools
 
 Regroupement de designers aux penchants libristes.
 http://etienneozeray.fr/pads/pads.html
