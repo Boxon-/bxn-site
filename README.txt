@@ -4,14 +4,15 @@
 | |_) \ \  / /  \ \  / / |\  |
 |____/ \_\/_/_/\_\_\/_/|_| \_|
 
-﻿Création du site boxon.tools
+﻿Création du site boxon
 
 Regroupement de designers aux penchants libristes.
 http://etienneozeray.fr/pads/pads.html
 
-Participants : Xavier Klein, Étienne Ozeray, Alexandre Cormier, Antoine Gelgon, Ivan Murit.
+Participants : Alexandre Cormier, Antoine Gelgon, Xavier Klein, Ivan Murit, Étienne Ozeray.
 
 LICENCE : GNU/GPL V3 (http://www.gnu.org/copyleft/gpl.html)
 
-Pour acceder à la page Sandbox et voir les exemples d'Alexandre :
-http://localhost/ToDoList/index.php?chapitre=sandbox
+Le site est pour l'instant séparer en 2 partie :
+ -La partie "blog" où se crée le blog en Wordpress.
+ -La partie "site" où se à partir de rien le reste du site B<>X<>N
