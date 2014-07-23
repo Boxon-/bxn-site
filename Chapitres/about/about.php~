@@ -1,1 +1,0 @@
-<iframe name='embed_readwrite' src='http://lite4.framapad.org/p/todolistabout?showControls=true&showChat=false&showLineNumbers=false&useMonospaceFont=false' width=600 height=400></iframe>

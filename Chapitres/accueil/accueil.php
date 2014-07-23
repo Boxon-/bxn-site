@@ -1,1 +1,0 @@
-Mesdames et messieurs, l'accueil !
