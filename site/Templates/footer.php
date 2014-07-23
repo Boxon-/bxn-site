@@ -1,0 +1,1 @@
+bandeau inférieur

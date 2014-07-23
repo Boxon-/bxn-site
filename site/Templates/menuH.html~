@@ -1,0 +1,10 @@
+<p>
+<ul  id="menu_horizontal">
+<li><a href="<?php echo $S->generateURLFor('accueil'); ?>">HOME</a> |</li>
+<li><a href="<?php echo $S->generateURLFor('blog'); ?>">BLOG</a> |</li>
+<li><a href="<?php echo $S->generateURLFor('bibli'); ?>">LIBRARY</a> |</li>
+<li><a href="<?php echo $S->generateURLFor(''); ?>">GIT</a> |</li>
+<li><a href="<?php echo $S->generateURLFor(''); ?>">BOOKMARKS</a> |</li>
+<li><a href="<?php echo $S->generateURLFor('about'); ?>">ABOUT</a> |</li>
+</ul>
+</p>
