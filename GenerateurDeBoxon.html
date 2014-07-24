@@ -75,11 +75,8 @@
 						var N = ["n","N"];
 						return N[randomIndex(N)];
 					}
-					var fixedRandomB = randomB();
 					var fixedRandomO = randomO();
-					var fixedRandomX = randomX();
-					var fixedRandomN = randomN();
-					var resultat = fixedRandomB+fixedRandomO+fixedRandomX+fixedRandomO+fixedRandomN;
+					var resultat = randomB()+fixedRandomO+randomX()+fixedRandomO+randomN();
 					console.log(resultat);
 					//var resultat = randomX();
 
