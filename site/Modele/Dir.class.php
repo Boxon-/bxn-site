@@ -1,11 +1,11 @@
 <?php
 class Dir extends Component {
 
-	//variables 
+	//variables
 	private $url;
 	private $dir_handle;
 	private $blocked;
-	
+
 	//construction
     public function __construct($url){
 		parent::__construct("dir");
@@ -13,7 +13,7 @@ class Dir extends Component {
 		$this->Log("New Dir : ".$this->url);
 		return true;
     }
-	
+
 	//GETTERS
 	public function getURL(){
 		return $this->url;
@@ -33,13 +33,13 @@ class Dir extends Component {
 			}
 		}
 		return false;
-	}	
-	
+	}
+
 	//Lecture du dossier
 	public function read($outputType,$updateLog=true){
 	$this->Log("Start reading Dir : ".$this->url);
 		if (file_exists($this->url)) {
-			if ($this->dir_handle = opendir($this->url)or die("can't open dir")) {	
+			if ($this->dir_handle = opendir($this->url)or die("can't open dir")) {
 				$output;
 				switch($outputType){
 					case 'string':
@@ -81,8 +81,8 @@ class Dir extends Component {
 			}
 		}
 		return false;
-	}	
-	//supprimmer le dossier	
+	}
+	//supprimmer le dossier
 	public function delete($updateLog=true){
 	$this->Log("deleting :".$this->url);
 		if($this->blocked==false){
@@ -98,7 +98,7 @@ class Dir extends Component {
 			}
 		}
 		return false;
-	}	
+	}
 
 }
 ?>

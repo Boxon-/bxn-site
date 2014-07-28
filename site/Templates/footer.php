@@ -1,1 +1,1 @@
-bandeau inférieur
+<!--bandeau inférieur-->

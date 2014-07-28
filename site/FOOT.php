@@ -1,3 +1,2 @@
-COUCOU
 </body>
 </head>

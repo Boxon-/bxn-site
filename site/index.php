@@ -1,6 +1,6 @@
-<?php 
+<?php
 	//desactivation des erreurs php
-	//error_reporting(0);	
+	//error_reporting(0);
 
 	// recuperation des infos sur le serveur
 	$serverName = $_SERVER['SERVER_NAME'];
@@ -15,7 +15,7 @@
 	if($serverName=='localhost'){
 		$root = dirname(__FILE__);
 		$url = "http://".$serverName.'/'.$fileURL;
-		
+
 	}else{
 		$root = dirname(__FILE__);
 		$url = "http://".$serverName.$fileURL;
@@ -25,7 +25,7 @@
 ?>
 	<div id="header"><!--marge superieure--><?php include_once("Templates/header.php");?></div>
 	<div id="main">
-		<div id="banniere"><!--Templates/banniere.html--><?php include_once('Templates/banniere.html')?></div>
+	<div id="banniere"><!--Templates/banniere.html--><?php include_once('Templates/banniere.html')?></div>
 		</br>
 		<div id="menuH"><!--Templates/menuH.html--><?php include_once('Templates/menuH.html')?></div>
 		</br>
@@ -35,6 +35,6 @@
 	</div>
 	<div id="footer"><!--marge inferieure--><?php include_once("Templates/footer.php");?></div>
 	<script>
-	// script de la page 
+	// script de la page
 	</script>
 <?php require($root.'/FOOT.php')?>

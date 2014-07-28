@@ -1,0 +1,22 @@
+@font-face {
+    font-family: linux;
+    src: url(site/Templates/font/LinBiolinum_RBah.ttf);
+}
+
+@font-face {
+    font-family: terminal;
+    src: url(site/Templates/font/terminal-grotesque.ttf);
+}
+
+p
+{
+  font-family: terminal;
+
+}
+
+.genererBoxon
+{
+
+font-family: linux;
+font-size:5em;
+}
