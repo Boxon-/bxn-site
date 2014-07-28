@@ -16,7 +16,7 @@ function mettreLeBoxon ($V){
 		var resultat = "boxon";
 		//si vous rajoutez des nouveaux caracteres speciaux n'oubliez pas de les echapper en mettant '\' devant
 		function randomO (){
-			var O = ["o","O","0","\(\)","\{\}","\[\]","superO","\¤","\#","\«\»","\@","°","\*","\?","\©","\ø","\?","\?","\?","\?","?","?"];
+			var O = ["o","O","0","\(\)","\{\}","\[\]","superO","¤","#","\«\»","\@","\°","\*","\♦","\©","\ø","\●","\⥀","\⚑","\❁","\⎈","\◦"];
 			var pickedO = O[randomIndex(O)];
 			var result ="";
 			var randomNumber = Math.round(Math.random()*1)+1;
