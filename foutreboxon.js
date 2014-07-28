@@ -1,6 +1,8 @@
-function mettreLeBoxon (){
+function mettreLeBoxon ($V){
 	// remplace tout les contenus de DIV dont la classe CSS est "genererBoxon" par le mots boxon avec une orthographe aleatoire
 	var cibles = document.getElementsByClassName('genererBoxon');
+	var V = $V;
+	console.log(V);
 	function randomIndex ($Array){
 		var result = 0;
 		if($Array.length){
@@ -12,9 +14,9 @@ function mettreLeBoxon (){
 	}
 	function orthographeAleatoire(){
 		var resultat = "boxon";
-
+		//si vous rajoutez des nouveaux caracteres speciaux n'oubliez pas de les echapper en mettant '\' devant
 		function randomO (){
-			var O = ["o","O","0","\(\)","\{\}","\[\]","superO","\¤","\#","\«\»","\@","°","\*","\♦","\©","\ø","\●","\⥀","\⚑","\❁","⎈","◦"];
+			var O = ["o","O","0","\(\)","\{\}","\[\]","superO","\¤","\#","\«\»","\@","°","\*","\?","\©","\ø","\?","\?","\?","\?","?","?"];
 			var pickedO = O[randomIndex(O)];
 			var result ="";
 			var randomNumber = Math.round(Math.random()*1)+1;
@@ -64,11 +66,26 @@ function mettreLeBoxon (){
 			return N[randomIndex(N)];
 		}
 		var fixedRandomO = randomO();
-		var resultat = randomB()+fixedRandomO+randomX()+fixedRandomO+randomN();
+		//Endroit ou declarer les differentes versions
+		// >> 'nom de la version' : string ,     (le dernier element ne doit pas etre suivis d'une virgule)
+		var versions = {
+			'totalRandom1' : randomB()+fixedRandomO+randomX()+fixedRandomO+randomN(),
+			'BNfixes' : "B"+fixedRandomO+"X"+fixedRandomO+"N",
+			'nouvelleVersion' : "b"+"o"+"x"+"o"+"n"
+		}	
+		var defaultVersion =  versions['BNfixes'];	
+		if(V!=""){
+			if(versions[V]){
+				resultat = versions[V];
+			}else{
+				resultat = defaultVersion;	
+			}
+		}else{
+			resultat = defaultVersion;	
+		}
 		return resultat;
 	}
 	for (var i =0;i<cibles.length;i++){
 		cibles[i].innerHTML  = orthographeAleatoire();
-		console.log(cibles[i].innerHTML);
 	}	
 }
