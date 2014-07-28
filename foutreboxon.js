@@ -14,10 +14,10 @@ function mettreLeBoxon (){
 		var resultat = "boxon";
 
 		function randomO (){
-			var O = ["o","O","0","\(\)","\{\}","\[\]","superO","\@"];
+			var O = ["o","O","0","\(\)","\{\}","\[\]","superO","\¤","\#","\«\»","\@","°","\*","\♦","\©","\ø","\●","\⥀","\⚑","\❁","⎈","◦"];
 			var pickedO = O[randomIndex(O)];
 			var result ="";
-			var randomNumber = Math.round(Math.random()*2)+1;
+			var randomNumber = Math.round(Math.random()*1)+1;
 			if(pickedO=="superO"){
 				var firstHalf ="";
 				var secondHalf ="";
@@ -42,7 +42,7 @@ function mettreLeBoxon (){
 			var X = ["x","X","\*","superX"];
 			var pickedX = X[randomIndex(X)];
 			var result ="x";
-			var randomNumber = Math.round(Math.random()*4)+1;
+			var randomNumber = Math.round(Math.random()*1)+1;
 			if(pickedX=="superX"){
 				var firstHalf ="";
 				var secondHalf ="";
