@@ -11,6 +11,7 @@ Licence : GNU General Public License V.3 (http://www.gnu.org/copyleft/gpl.html)
 */
 
 @import url("font/Karmilla/stylesheet.css");
+@import url("font/Luxi/stylesheet.css");
 
 @charset "utf-8";
 /**/
@@ -28,6 +29,16 @@ Licence : GNU General Public License V.3 (http://www.gnu.org/copyleft/gpl.html)
 .contenu{
 	float: right;
 	width:77%;
+}
+
+.contenuinfos, a{
+	font-family: 'luxi_monoregular';
+	font-size: 0.9em;
+}
+
+a{
+	text-decoration: none;
+	letter-spacing: 1px;
 }
 
 footer{
