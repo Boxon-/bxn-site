@@ -10,7 +10,7 @@ Les fontes
 Création d'un dossier référence, avec des PDf et images de magazines d'informatique :
 radical Software, Whole Earth Catalog.
 (peut-être, partir des ces bases là pour commencer le design ?)
-[exemple](http://scri.ch/nid.png)
+![exemple](http://scri.ch/nid.png)
 
 Pour la home du blog utiliser masonery.js http://masonry.desandro.com/
 
