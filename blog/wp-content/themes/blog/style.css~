@@ -18,7 +18,7 @@ Licence : GNU General Public License V.3 (http://www.gnu.org/copyleft/gpl.html)
 
 .wrap{
 	marging: 2%;
-	font-family: 'karmillaregular';
+	font-family: monospace;
 }
 
 .side{
@@ -36,21 +36,13 @@ Licence : GNU General Public License V.3 (http://www.gnu.org/copyleft/gpl.html)
 	font-size: 0.9em;
 }
 
+.titre{
+	border: 1px solid black;
+}
+
 a{
 	text-decoration: none;
 	letter-spacing: 1px;
-}
-
-.titre a{
-	font-family: 'karmillabold';
-	font-size: 2em;
-	position: fixed;
-	border: 1px solid black;
-	text-align: center;
-	padding: 8px;
-	left: 50%;
-	top: 35px;
-	color: black;
 }
 
 footer{

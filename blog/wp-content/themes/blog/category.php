@@ -6,4 +6,3 @@
 </div>
 <?php get_footer(); ?>
 <?php include 'pad.php'; ?>
-

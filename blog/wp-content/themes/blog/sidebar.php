@@ -1,11 +1,12 @@
 <div class="side">
       <header id="presentation">
-        <p class="titre"><a href="index.php"><?php bloginfo('name'); ?></a></p>
+  <!-- Il faudrait réécrire le script pour que ça change au chargement de la page -->
+  <p class="titre"><a href="javascript:;" onclick="mettreLeBoxon('BNfixes')"><span class="genererBoxon"><?php bloginfo('name'); ?></span></a></p>
         <p class="titre2"><?php bloginfo('description'); ?></p>
       </header>
 <ul class="menu">
 	<li class="categories">
-		 <?php 
+		 <?php
 		 $args = array(
 			'show_option_all'    => '',
 			'orderby'            => 'name',
@@ -33,7 +34,7 @@
 			'walker'             => null
 		);
 		wp_list_categories( $args );
-		?> 
+		?>
 	</li>
 	<li class="contact">
 		<a href="mailto:salut@boxon.tools">Contact</a>
@@ -42,12 +43,11 @@
 	<li class="rss">
 	 	<a class="side_lien" href="<?php bloginfo('rss2_url'); ?>">RSS</a>
 	</li>
-</ul> 
+</ul>
 
-  
+
   <!-- Formulaire de recherche -->
   <?php get_search_form(); ?>
-  
+
 
 </div>
-
