@@ -1,6 +1,6 @@
 /*
 Theme Name: boxon
-Theme URI: 
+Theme URI:
 Description: b<>x<>n blog theme
 Version: 1.0
 Authors:  Alexandre Cormier, Antoine Gelgon, Xavier Klein, Ivan Murit, Étienne Ozeray
@@ -10,11 +10,14 @@ Licence : GNU General Public License V.3 (http://www.gnu.org/copyleft/gpl.html)
 
 */
 
+@import url("font/Karmilla/stylesheet.css");
+
 @charset "utf-8";
 /**/
 
 .wrap{
 	marging: 2%;
+	font-family: 'karmillaregular';
 }
 
 .side{
@@ -33,5 +36,5 @@ footer{
 }
 
 footer img.cc{
-	width:50px;	
+	width:50px;
 }
