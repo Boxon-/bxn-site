@@ -2,8 +2,7 @@
 LOG SITE BOXON.INFO
 --------------------
 contributeurs :
-Xavier Klein, Étienne Ozeray,
-Alexandre Cormier, Ivan Murit, Antoine Gelgon
+Xavier Klein, Étienne Ozeray, Alexandre Cormier, Ivan Murit, Antoine Gelgon
 -------------------
 
 03/08/2014 : Etienne & Antoine
