@@ -49,3 +49,8 @@ footer{
 footer img.cc{
 	width:50px;
 }
+
+.post {
+	border:1px black solid;
+	padding:20px;
+}
