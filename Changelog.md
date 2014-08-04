@@ -5,13 +5,13 @@ contributeurs : Xavier Klein, Étienne Ozeray, Alexandre Cormier, Ivan Murit, An
 03/08/2014 : Etienne & Antoine
 
 Les fontes
-    -textes courants : Karmilla
-    -textes liens et metadonnées : Luximono
+-textes courants : Karmilla
+-textes liens et metadonnées : Luximono
 
 Création d'un dossier référence, avec des PDf et images de magazines d'informatique :
 radical Software, Whole Earth Catalog.
 (peut-être, partir des ces bases là pour commencer le design ?)
-![exemple](http://scri.ch/nid.png)
+![exemple](http://scri.ch/nie.png)
 
 Pour la home du blog utiliser masonery.js http://masonry.desandro.com/
 
