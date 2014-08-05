@@ -3,5 +3,6 @@
        </footer>
     </div>
     <?php wp_footer(); ?>
+    <script>mettreLeBoxon('BNfixes');</script>
   </body>
 </html>

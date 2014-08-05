@@ -27,7 +27,7 @@ Licence : GNU General Public License V.3 (http://www.gnu.org/copyleft/gpl.html)
 }
 
 .contenu{
-	float: right;
+	float: left;
 	width:77%;
 }
 
@@ -39,18 +39,28 @@ Licence : GNU General Public License V.3 (http://www.gnu.org/copyleft/gpl.html)
 a{
 	text-decoration: none;
 	letter-spacing: 1px;
+	color: red;
+}
+
+p.titre{
+
 }
 
 .titre a{
-	font-family: 'karmillabold';
-	font-size: 2em;
-	position: fixed;
-	border: 1px solid black;
+	baseline: center;
+font-family: 'karmillabold';
+position: fixed;
+margin: auto;
+top: 35px;
+width: 200px;
+height: 30px;
+left: 50%;
+margin: 0 0 0 -99px;
+font-size: 2em;
+	border: 4px solid black;
 	text-align: center;
-	padding: 8px;
-	left: 50%;
-	top: 35px;
-	color: black;
+	padding: 12px;
+color: black;
 }
 
 footer{

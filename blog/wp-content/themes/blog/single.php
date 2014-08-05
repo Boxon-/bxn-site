@@ -1,8 +1,7 @@
 <?php get_header(); ?>
-
+<?php get_sidebar(); ?>
 <div class="contenu">
-	<?php get_sidebar(); ?>
-	<?php if (have_posts()) : ?>  
+	<?php if (have_posts()) : ?>
 	<?php while (have_posts()) : the_post(); ?>
 	    <div class="post">
 		      <p class="titre2contenu">
@@ -24,7 +23,7 @@
 	    Aucun résultat.
 	  </p>
 	<?php endif; ?>
-	
+
 </div>
 
 <?php get_footer(); ?>

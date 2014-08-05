@@ -1,8 +1,12 @@
 <div class="side">
       <header id="presentation">
   <!-- Il faudrait réécrire le script pour que ça change au chargement de la page -->
-  <p class="titre"><a href="javascript:;" onclick="mettreLeBoxon('BNfixes')"><span class="genererBoxon"><?php bloginfo('name'); ?></span></a></p>
-        <p class="titre2"><?php bloginfo('description'); ?></p>
+  <p class="titre">
+    <a href="index.php">
+      <span class="genererBoxon">BOXON<span>
+    </a>
+    </p>
+  <p class="titre2"><?php bloginfo('description'); ?></p>
       </header>
 <ul class="menu">
 	<li class="categories">

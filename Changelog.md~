@@ -15,6 +15,7 @@ radical Software, Whole Earth Catalog.
 
 Pour la home du blog utiliser masonery.js http://masonry.desandro.com/
 
+
 On peut changer le style d'un post selon sa catégorie,
 en lui donnant un class au nom de cette catégorie.
 Donc chaque post a un style associé à sa catégorie.
