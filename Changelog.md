@@ -32,7 +32,8 @@ Tout ça c'est surtout indicatif, rien de décisif, hesitez pas à changer les s
 ![capture](http://etienneozeray.fr/bordel/boxon1_2.png)
 ![capture](http://etienneozeray.fr/bordel/boxon2_2.png)
 
-Si vous voulez voir ce que ça donne en live, il faut créer une petite dizaine d'articles et leur attribuer chacun 3 catégories (type, domaine, support).
+Si vous voulez voir ce que ça donne en live, il faut créer une petite dizaine d'articles et leur attribuer chacun 3 catégories (type, domaine, support) tout en respectant les catégories définies ci-dessus.
+
 
 ## 03/08/2014 : Étienne & Antoine
 
