@@ -29,8 +29,8 @@ Voici donc les catégories définies pour le moment :
 Tout ça c'est surtout indicatif, rien de décisif, hesitez pas à changer les styles !
 Ça risque d'être un peu la galère pour visualiser avec vos bases de données, donc voici des captures d'écran :
 
-![capture](http://etienneozeray.fr/bordel/boxon1.png)
-![capture](http://etienneozeray.fr/bordel/boxon1.png)
+![capture](http://etienneozeray.fr/bordel/boxon1_2.png)
+![capture](http://etienneozeray.fr/bordel/boxon2_2.png)
 
 Si vous voulez voir ce que ça donne en live, il faut créer une petite dizaine d'articles et leur attribuer chacun 3 catégories (type, domaine, support).
 
