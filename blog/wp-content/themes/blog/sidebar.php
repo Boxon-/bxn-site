@@ -9,7 +9,6 @@
   <p class="titre2"><?php bloginfo('description'); ?></p>
       </header>
 <ul class="menu">
-	<li class="categories">
 		 <?php
 		 $args = array(
 			'show_option_all'    => '',
@@ -37,9 +36,12 @@
 			'taxonomy'           => 'category',
 			'walker'             => null
 		);
-		wp_list_categories( $args );
+    $allCategories = get_categories( $args );
+		foreach($allCategories as $theCategory){
+      /* TO DO : $theCategory->url mène vers la racine, à corriger */
+      echo "<li class='categories'><a href='" .$theCategory->url. "'>" .$theCategory->name. "</a></li>";
+    }
 		?>
-	</li>
 	<li class="contact">
 		<a href="mailto:salut@boxon.tools">Contact</a>
   		<!-- Bouton RSS -->

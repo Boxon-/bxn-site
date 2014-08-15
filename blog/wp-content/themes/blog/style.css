@@ -13,22 +13,26 @@ Licence : GNU General Public License V.3 (http://www.gnu.org/copyleft/gpl.html)
 @import url("font/Karmilla/stylesheet.css");
 @import url("font/Luxi/stylesheet.css");
 
-@charset "utf-8";
+@charset "UTF-8";
 /**/
 
 .wrap{
-	marging: 2%;
+	margin: 2%;
 	font-family: 'karmillaregular';
 }
 
 .side{
 	float: left;
-	width: 17%;
+	width: 10%;
+	position: fixed;
+	z-index:100;
+	border: 4px solid black;
+	padding: 5px;
 }
 
-.contenu{
-	float: left;
-	width:77%;
+#contenu{
+	width: 90%;
+	margin-left: 13%;
 }
 
 .contenuinfos, a{
@@ -42,25 +46,30 @@ a{
 	color: red;
 }
 
+a:hover{
+	border-bottom: 2px solid red;
+	/* box-shadow: 15px 15px 20px teal; */
+
+}
+
 p.titre{
 
 }
 
 .titre a{
-	baseline: center;
-font-family: 'karmillabold';
-position: fixed;
-margin: auto;
-top: 35px;
-width: 200px;
-height: 30px;
-left: 50%;
-margin: 0 0 0 -99px;
-font-size: 2em;
+	font-family: 'karmillabold';
+	position: fixed;
+	top: 35px;
+	width: 200px;
+	height: 30px;
+	left: 50%;
+	margin: 0 0 0 -99px;
+	font-size: 2em;
 	border: 4px solid black;
 	text-align: center;
 	padding: 12px;
-color: black;
+	color: black;
+	background-color: white;
 }
 
 footer{
@@ -73,6 +82,119 @@ footer img.cc{
 }
 
 .post {
-	border:1px black solid;
+	/* Peut-être trouver une couleur pour les bordures ? */
+	border: 4px solid black;
 	padding:20px;
+	margin-bottom: 15px;
+	width: 20%;
 }
+
+.post img{
+	width: 100%;
+}
+
+
+/*
+ ***********************************************
+ * Styles des posts en fonction des catégories *
+ ***********************************************
+ * Il faudrait définir trois types de catégories :
+ * 	- celles qui désignent un type (outil, texte...)
+ * 	- celles qui désignent un domaine (design graphique,
+ * 		web, art...),
+ *	- celles qui désignent un support (web, livre, vidéo...)
+ * il faut que les styles de chaque type soient cumulables,
+ * par exemples jouer sur les titres pour le type, les bordures
+ * pour le domaine et le texte courant pour le support.
+ * Il serait même bien qu'à l'intérieur du type elles puissent
+ * être cumulables (design graphique + web ou art + web...).
+ * + un style par défaut pour chaque type.
+ */
+
+/* TYPE = TITRES */
+
+.post.outils .titre2contenu{
+	transform: rotate(-10deg);
+	-webkit-transform: rotate(-10deg);
+	-o-transform: rotate(-10deg);
+	-ms-transform: rotate(-10deg);
+	-moz-transform: rotate(-10deg);
+}
+
+.post.textes .titre2contenu{
+  -moz-transform: matrix(1, 0, 0.7, 1, 0, 0);
+	-webkit-transform: matrix(1, 0, 0.7, 1,  0, 0);
+  -o-transform: matrix(1, 0, 0.7, 1,  0, 0);
+ 	-ms-transform: matrix(1, 0, 0.7, 1,  0, 0);
+ 	transform: matrix(1, 0, 0.7, 1,  0, 0);
+}
+
+.post.evenements .titre2contenu{
+	-moz-transform: matrix(1, 0.1, 0, 1.3, 0, 0);
+	-webkit-transform: matrix(1, 0.1, 0, 1.3,  0, 0);
+	-o-transform: matrix(1, 0.1, 0, 1.3,  0, 0);
+	-ms-transform: matrix(1, 0.1, 0, 1.3,  0, 0);
+	transform: matrix(1, 0.1, 0, 1.3,  0, 0);
+}
+
+.post.evenements .titre2contenu a{
+	letter-spacing: 15px;
+	border-bottom: 1px dashed red;
+}
+
+.post.documentaires .titre2contenu{
+	-moz-transform: matrix(1, -0.1, -0.9, 1, 0, 0);
+	-webkit-transform: matrix(1, -0.1, -0.9, 1,  0, 0);
+	-o-transform: matrix(1, -0.1, -0.9, 1,  0, 0);
+	-ms-transform: matrix(1, -0.1, -0.9, 1,  0, 0);
+	transform: matrix(1, -0.1, -0.9, 1,  0, 0);
+}
+
+.post.documentaires .titre2contenu a{
+	border-bottom: 1px dashed red;
+}
+
+/* DOMAINE = BORDURES */
+
+.post.typographie{
+	border: 0px;
+  box-shadow: 15px 15px 20px #444;
+	-webkit-box-shadow: 15px 15px 20px #444;
+	-moz-box-shadow: 15px 15px 20px #444;
+	margin-left: -5px;
+}
+
+.post.art{
+	-webkit-border-radius: 30px;
+	-moz-border-radius: 30px;
+	border-radius: 30px;
+}
+
+.post.design-graphique{
+	border-style: dashed;
+}
+
+.post.design-objet{
+}
+
+/* SUPPORT = TEXTE COURANT */
+
+.post.web{
+	text-align: center;
+}
+
+.post.videos{
+	background-color: black;
+	color: white;
+}
+
+.post.livres{
+	letter-spacing: 2px;
+	text-align: justify;
+}
+
+/*
+****************************
+* FIN DES STYLES DES POSTS *
+****************************
+*/
