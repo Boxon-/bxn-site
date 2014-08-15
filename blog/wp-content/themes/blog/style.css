@@ -157,7 +157,7 @@ footer img.cc{
 /* DOMAINE = BORDURES */
 
 .post.typographie{
-	border: 0px;
+	border: 1px solid black;
   box-shadow: 15px 15px 20px #444;
 	-webkit-box-shadow: 15px 15px 20px #444;
 	-moz-box-shadow: 15px 15px 20px #444;
@@ -165,9 +165,9 @@ footer img.cc{
 }
 
 .post.art{
-	-webkit-border-radius: 30px;
-	-moz-border-radius: 30px;
-	border-radius: 30px;
+	-webkit-border-radius: 150px;
+	-moz-border-radius: 150px;
+	border-radius: 150px;
 }
 
 .post.design-graphique{
