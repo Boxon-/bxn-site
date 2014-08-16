@@ -30,6 +30,10 @@ Licence : GNU General Public License V.3 (http://www.gnu.org/copyleft/gpl.html)
 	padding: 5px;
 }
 
+.side input{
+	width: 90%;
+}
+
 #contenu{
 	width: 90%;
 	margin-left: 13%;
