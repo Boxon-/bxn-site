@@ -37,10 +37,11 @@
 			'walker'             => null
 		);
     $allCategories = get_categories( $args );
-		foreach($allCategories as $theCategory){
-      /* TO DO : $theCategory->url mène vers la racine, à corriger */
-      echo "<li class='categories'><a href='" .$theCategory->url. "'>" .$theCategory->name. "</a></li>";
-    }
+	foreach($allCategories as $theCategory){
+      	/* TO DO : $theCategory->url mène vers la racine, à corriger ---alex---> fait */
+      		$url = get_site_url().'/?cat='.$theCategory->cat_ID;
+      		echo "<li class='categories'><a href='" .$url. "'>" .$theCategory->name. "</a></li>";
+	}
 		?>
 	<li class="contact">
 		<a href="mailto:salut@boxon.tools">Contact</a>
