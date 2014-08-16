@@ -5,6 +5,7 @@ contributeurs : Xavier Klein, Étienne Ozeray, Alexandre Cormier, Ivan Murit, An
 ## 15/08/2014 : Étienne
 
 Intégration de masonry.js
+
 J'ai commencé des tests de style en fonction des catégories
 Il faudrait définir trois types de catégories :
 
