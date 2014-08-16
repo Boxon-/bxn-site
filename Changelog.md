@@ -35,6 +35,8 @@ Tout ça c'est surtout indicatif, rien de décisif, hesitez pas à changer les s
 
 Si vous voulez voir ce que ça donne en live, il faut créer une petite dizaine d'articles et leur attribuer chacun 3 catégories (type, domaine, support) tout en respectant les catégories définies ci-dessus.
 
+Du coup ça serait peut-être pas mal que chaque catégorie du menu reprenne le style qui lui est associé.
+
 
 ## 03/08/2014 : Étienne & Antoine
 
