@@ -2,6 +2,15 @@ LOG SITE BOXON.INFO
 --------------------
 contributeurs : Xavier Klein, Étienne Ozeray, Alexandre Cormier, Ivan Murit, Antoine Gelgon
 
+## 17/08/2014 : Étienne
+
+Les styles du menu suivent maintenant les styles des catégories :
+
+
+Du coup le menu déborde, on peut soit faire un overflow-y: scroll ou retirer la position:fixed. J'ai choisi la seconde solution mais c'est à voir.
+
+![capture](http://etienneozeray.fr/bordel/boxon3.png)
+
 ## 15/08/2014 : Étienne
 
 Intégration de masonry.js
