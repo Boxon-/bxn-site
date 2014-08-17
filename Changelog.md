@@ -6,10 +6,9 @@ contributeurs : Xavier Klein, Étienne Ozeray, Alexandre Cormier, Ivan Murit, An
 
 Les styles du menu suivent maintenant les styles des catégories :
 
+![capture](http://etienneozeray.fr/bordel/boxon3.png)
 
 Du coup le menu déborde, on peut soit faire un overflow-y: scroll ou retirer la position:fixed. J'ai choisi la seconde solution mais c'est à voir.
-
-![capture](http://etienneozeray.fr/bordel/boxon3.png)
 
 ## 15/08/2014 : Étienne
 
