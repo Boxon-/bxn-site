@@ -1,6 +1,5 @@
 <div class="side">
       <header id="presentation">
-  <!-- Il faudrait réécrire le script pour que ça change au chargement de la page -->
   <p class="titre">
     <a href="index.php">
       <span class="genererBoxon">BOXON<span>
@@ -37,10 +36,11 @@
 			'walker'             => null
 		);
     $allCategories = get_categories( $args );
-		foreach($allCategories as $theCategory){
-      /* TO DO : $theCategory->url mène vers la racine, à corriger */
-      echo "<div class='" .$theCategory->category_nicename. "'><li class='categories'><a href='" .$theCategory->url. "'>" .$theCategory->name. "</a></li></div>";
-    }
+	foreach($allCategories as $theCategory){
+      	/* TO DO : $theCategory->url mène vers la racine, à corriger ---alex---> fait */
+      		$url = get_site_url().'/?cat='.$theCategory->cat_ID;
+      		echo "<div class='" .$theCategory->category_nicename. "'><li class='categories'><a href='" .$url. "'>" .$theCategory->name. "</a></li></div>";
+	}
 		?>
 	<div>
     <li class="contact">

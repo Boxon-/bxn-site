@@ -3,7 +3,8 @@
 <div id="contenu">
 	<?php if (have_posts()) : ?>
 	<?php while (have_posts()) : the_post(); ?>
-	    <div class="post">
+	<?php $categories = get_the_category(); ?>
+	    <div class="single item post<?php foreach ($categories as $category){ echo ' '.$category->category_nicename;} ?>">
 		      <p class="titre2contenu">
 		        <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 		      </p>
