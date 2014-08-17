@@ -39,16 +39,19 @@
     $allCategories = get_categories( $args );
 		foreach($allCategories as $theCategory){
       /* TO DO : $theCategory->url mène vers la racine, à corriger */
-      echo "<li class='categories'><a href='" .$theCategory->url. "'>" .$theCategory->name. "</a></li>";
+      echo "<div class='" .$theCategory->category_nicename. "'><li class='categories'><a href='" .$theCategory->url. "'>" .$theCategory->name. "</a></li></div>";
     }
 		?>
-	<li class="contact">
-		<a href="mailto:salut@boxon.tools">Contact</a>
-  		<!-- Bouton RSS -->
-	</li>
-	<li class="rss">
-	 	<a class="side_lien" href="<?php bloginfo('rss2_url'); ?>">RSS</a>
-	</li>
+	<div>
+    <li class="contact">
+  		<a href="mailto:salut@boxon.tools">Contact</a>
+  	</li>
+  </div>
+  <div>
+  	<li class="rss">
+  	 	<a class="side_lien" href="<?php bloginfo('rss2_url'); ?>">RSS</a>
+  	</li>
+  </div>
 </ul>
 
 
