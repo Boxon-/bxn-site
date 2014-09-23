@@ -1,0 +1,28 @@
+Les bares Git doivent se situer dans le dossier gits, à la racine de BoxonGit.
+
+Pour mettre en place un bare Git :
+	cd dans/le/dossier
+	git clone --bare /gitprojects/myproject.git
+
+Pour qu'il se mette à jour :
+	ouvrir le fichier config
+	ajouter à [remote "origin"]
+		fetch = +refs/*:refs/*
+		mirror = true
+	Puis, quand une maj est nécessaire :
+		git fetch
+
+Pour définir les méta-données :
+	ouvrir le fichier config et ajouter et completer les lignes suivantes (ce sont surtout les trois premières lignes qui sont importantes):
+		[gitphp]
+		    category =
+		    description =
+		    owner =
+		    cloneurl =
+		    pushurl =
+		    bugpattern =
+		    bugurl =
+		    compat =
+		    website =
+		    allowedusers =
+		    allowedusers =
