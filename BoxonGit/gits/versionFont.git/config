@@ -1,0 +1,20 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = true
+[remote "origin"]
+	url = https://github.com/xavierKlein/versionFont
+	fetch = +refs/*:refs/*
+	mirror = true
+[gitphp]
+	category = Typography
+	description = A versioning font with a lot fork
+	owner = Xavier Klein
+	cloneurl =
+	pushurl =
+	bugpattern =
+	bugurl =
+	compat =
+	website =
+	allowedusers =
+	allowedusers =

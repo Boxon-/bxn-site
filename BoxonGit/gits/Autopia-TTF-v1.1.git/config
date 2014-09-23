@@ -1,0 +1,20 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = true
+[remote "origin"]
+	url = https://github.com/Antoine-Gelgon/Autopia-TTF-v1.1
+	fetch = +refs/*:refs/*
+	mirror = true
+[gitphp]
+	category = Typography
+	description = Autopia is a free family Typeface. The skeleton was generated through Autotrace Program.
+	owner = Antoine Gelgon
+	cloneurl =
+	pushurl =
+	bugpattern =
+	bugurl =
+	compat =
+	website =
+	allowedusers =
+	allowedusers =

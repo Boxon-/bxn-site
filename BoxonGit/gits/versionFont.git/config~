@@ -1,0 +1,20 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = true
+[remote "origin"]
+	url = https://github.com/xavierKlein/versionFont
+	fetch = +refs/*:refs/*
+	mirror = true
+[gitphp]
+	category = Tool
+	description = BASH script who's turning an Hotglue page to a fully editable SVG on Inkscape and to a pdf
+	owner = Xavier Klein
+	cloneurl =
+	pushurl =
+	bugpattern =
+	bugurl =
+	compat =
+	website =
+	allowedusers =
+	allowedusers =

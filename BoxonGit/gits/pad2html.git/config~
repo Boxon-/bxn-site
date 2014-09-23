@@ -1,0 +1,21 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = true
+[remote "origin"]
+	url = https://github.com/xavierKlein/pad2html
+	fetch = +refs/*:refs/*
+	mirror = true
+[gitphp]
+	category = Tools
+	category2 = Website
+	description = Transform Etherpad, Framapad, PiratePad etc. into a website.
+	owner = Étienne Ozeray
+	cloneurl =
+	pushurl =
+	bugpattern =
+	bugurl =
+	compat =
+	website =
+	allowedusers =
+	allowedusers =
