@@ -16,7 +16,7 @@ Voir *BoxonGit/README* pour l'usage.
 
 Pour l'instant, c'est la structure de base de GitPhp, juste un peu pimpé. Mais dans l'idée, je pense qu'il faudrait virer la structure tableau/liste pour mettre plus en avant l'image. Peut-être reprendre la structure du blog en mettant en avant le readme. Ensuite faudrait voir comment on peut imaginer du versionning d'image ou de typo. Pour la typo, ca serait cool de reprendre [ofont](http://ofont.net/) pour par exemple avoir un live preview des différentes versions, soit avec un slider, soit avec un jeu de superposition ([un truc dans ce genre](https://github.com/blog/1633-3d-file-diffs)). Ça serait aussi envisageable pour du svg. 
 
-De la [lecture](http://w.xuv.be/projects/design_with_git) sur le sujet. Ou [ça](http://f-u-t-u-r-e.org/r/24_David-Reinfurt_Versionnage-infini_FR.md). ou encore [ça](http://ospublish.constantvzw.org/blog/tools/diff-git-imagemagick). 
+De la [lecture](http://w.xuv.be/projects/design_with_git) sur le sujet. Ou [ça](http://f-u-t-u-r-e.org/r/24_David-Reinfurt_Versionnage-infini_FR.md). ou encore [ça](http://ospublish.constantvzw.org/blog/tools/diff-git-imagemagick). Et [ça](http://www.imagemagick.org/Usage/compare/) aussi.
 
 Par ailleurs, maintenant qu'on a une *organisation* Boxon sur GitHub, je pense qu'on s'y retrouverais mieux s'il l'on avait un projet par partie (un pour le blog, un pour le git, etc). Ça serait plus clair et moins lourd que d'avoir tout sous le projet Bxn-site.
 
